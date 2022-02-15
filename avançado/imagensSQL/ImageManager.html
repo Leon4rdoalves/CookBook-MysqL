@@ -1,0 +1,103 @@
+<!DOCTYPE html encoding="windows-1252">
+<html>
+<head>
+	<meta charset="windows-1252">
+    <title>Image Manager</title>
+    <script type="text/javascript">
+
+
+        function fc_LoadPage() {
+            document.getElementById('lbl_FormularioBloqueado').style.display = 'none';
+            document.getElementById('tbl_formulario').style.display = '';
+        }
+
+        function fc_SalvaImagem() {
+		var str_ConnectionString = txt_StringConexao.value;
+            var filesSelected = document.getElementById("txt_NomeArquivoImagem").files;
+            if (filesSelected.length > 0) {
+                var fileToLoad = filesSelected[0];
+                var fileReader = new FileReader();
+				
+                fileReader.onload = function (fileLoadedEvent) {
+                    var base64 = fileLoadedEvent.target.result.split(',')[1]; 
+					
+                    var ob_connection = new ActiveXObject('ADODB.Connection');
+                    ob_connection.Open(str_ConnectionString);
+					var sql = "";
+					sql = sql + "declare @str_base64 varchar(max)" + "\n";
+					sql = sql + "set @str_base64 = '" + base64 + "'" + "\n";
+					sql = sql + "insert into imagens (nm_arquivo, vb_imagem) " + "\n";
+					sql = sql + "select '" + "\n";
+					sql = sql + filesSelected[0].name + "'," + "\n";
+					sql = sql + "cast(N'' as xml).value('xs:base64Binary(sql:variable(\"@str_base64\"))', 'varbinary(max)');";
+
+                    ob_connection.Execute(sql);
+                    ob_connection.Close();
+                    alert("Imagem salva com sucesso!");
+                }
+                fileReader.readAsDataURL(fileToLoad);
+            }
+        }
+
+
+        function fc_ListaImagens() {
+			var str_ConnectionString = txt_StringConexao.value;
+            var ob_connection = new ActiveXObject('ADODB.Connection');
+			var rs = new ActiveXObject('ADODB.Recordset');
+            ob_connection.Open(str_ConnectionString);
+			
+			var sql = "";
+			sql = "select nm_arquivo, cast(N'' as xml).value('xs:base64Binary(xs:hexBinary(sql:column(\"vb_imagem\")))', 'varchar(max)') as vb_imagem from imagens"
+			
+            rs.Open(sql, ob_connection);
+            if (!rs.bof) { rs.MoveFirst(); };
+
+            document.getElementById("divArquivos").innerHTML = "";
+
+            while (!rs.eof) {
+                var imgSrc = 'data:image/jpeg;base64,' + rs.Fields("vb_imagem").Value;
+				document.getElementById("divArquivos").innerHTML = document.getElementById("divArquivos").innerHTML + "<h3>Arquivo: " + rs.Fields("nm_arquivo").Value + "</h3>"
+                document.getElementById("divArquivos").innerHTML = document.getElementById("divArquivos").innerHTML + "<img src=\"" + imgSrc + "\" alt=\"\" /><br />";
+                rs.movenext;
+            }
+            rs.close;
+            ob_connection.close;
+        }
+
+    </script>
+</head>
+<body onload="fc_LoadPage()">
+
+<h2><label for="aviso" id="lbl_FormularioBloqueado">Desbloqueie os controles ActiveX!</label></h2>
+
+<div class="divTable" id="tbl_formulario" style="width: 80%; display: table; margin: 20px auto; padding: 15px; border: 2px solid #000; display: none" >
+	<div class="divTableBody">
+		<div class="divTableRow">
+		<div class="divTableCell">
+			<h2>Configurar acesso ao SQL</h2>
+			<p>String connection:
+			<input type="text" style="width:100%" name="txt_StringConexao" id="txt_StringConexao" value="Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=Curso;Data Source=."></td>
+			</p>
+		</div>
+		</div>
+		<div class="divTableRow">
+		<div class="divTableCell">
+			<h2>Gerenciador de imagens</h2>
+            <p>Escolha uma imagem para salvar: 
+			<input type="file" name="txt_NomeArquivoImagem" id="txt_NomeArquivoImagem" size="80">
+			<input type="Submit" name="InserirImagem" value="Inserir" onclick="fc_SalvaImagem()">
+			</p>
+			<p>Liste imagens salvas: <input type="Submit" name="ListarImagens" value="Listar Imagens" onclick="fc_ListaImagens()"></p>
+		</div>
+		</div>
+		<div class="divTableRow">
+		<div class="divTableCell">
+			<h2>Imagens salvas</h2>
+		</div>
+		</div>
+		<div id="divArquivos"></div>
+	</div>
+</div>
+
+</body>
+</html>
