@@ -75,7 +75,7 @@
 [Insert](https://github.com/Ebony-Full-Stack/Bloco_2/blob/main/Banco%20de%20Dados/basico/02.insert.sql) <br>
 [Select Simples](https://github.com/Ebony-Full-Stack/Bloco_2/blob/main/Banco%20de%20Dados/basico/03.selectsimples.sql) <br>
 [Alter](https://github.com/Ebony-Full-Stack/Bloco_2/blob/main/Banco%20de%20Dados/basico/04.alter.sql)
-* [Entendo o que foi feito](https://youtu.be/HRnoz6dofz4)
+* [Entendo o que foi feito](https://youtu.be/gSGYMiAOVoA)
 
 <p>
     Legal, agora precisamos conhecer alguns conceitos importantes antes de prosseguir-mos. Vamos falar sobre 
