@@ -2,6 +2,7 @@
  relaxe porque seu material está pronto, apenas este repositório está sendo remodelado com
  as atualizações que o material oficial já tem... Bjunda e bons estudos! 
 
+[Abertura](https://youtu.be/TShlXg7BRf0)
 
 <h3> Banco de dados <i> MySQL </i></h3>
 <p>
@@ -41,7 +42,7 @@
 * [PostGresSQL](https://www.postgresql.org/)
 * [Oracle](https://www.oracle.com/br/database/)
 
-[Conhecendo o Workbench]()
+[Conhecendo o Workbench](https://youtu.be/-32dLTyxB0A)
 
 <p>
     Posso entender que você já concluiu os passos de instalação e agora, 
@@ -62,7 +63,7 @@
     <img src="https://github.com/Ebony-Full-Stack/Bloco_2/blob/main/Banco%20de%20Dados/basico/assets/img2.png">
 </p>
  
-* [Entendendo o que foi feito]()
+* [Entendendo o que foi feito](https://youtu.be/2kRx9Yn40jU)
 * [Tipos de dados](https://docs.microsoft.com/pt-br/sql/t-sql/data-types/data-types-transact-sql?view=sql-server-ver15)
 
 <p>
@@ -74,7 +75,7 @@
 [Insert](https://github.com/Ebony-Full-Stack/Bloco_2/blob/main/Banco%20de%20Dados/basico/02.insert.sql) <br>
 [Select Simples](https://github.com/Ebony-Full-Stack/Bloco_2/blob/main/Banco%20de%20Dados/basico/03.selectsimples.sql) <br>
 [Alter](https://github.com/Ebony-Full-Stack/Bloco_2/blob/main/Banco%20de%20Dados/basico/04.alter.sql)
-* [Entendo o que foi feito]()
+* [Entendo o que foi feito](https://youtu.be/HRnoz6dofz4)
 
 <p>
     Legal, agora precisamos conhecer alguns conceitos importantes antes de prosseguir-mos. Vamos falar sobre 
