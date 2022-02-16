@@ -75,11 +75,12 @@
 [Insert](https://github.com/Ebony-Full-Stack/Bloco_2/blob/main/Banco%20de%20Dados/basico/02.insert.sql) <br>
 [Select Simples](https://github.com/Ebony-Full-Stack/Bloco_2/blob/main/Banco%20de%20Dados/basico/03.selectsimples.sql) <br>
 [Alter](https://github.com/Ebony-Full-Stack/Bloco_2/blob/main/Banco%20de%20Dados/basico/04.alter.sql)
-* [Entendo o que foi feito](https://youtu.be/HRnoz6dofz4)
+* [Entendo o que foi feito](https://youtu.be/gSGYMiAOVoA)
 
 <p>
+    Oooooooooooooooooooooooooooooooooooooooooow! leia aqui antes de fazer o exercício rsrs
     Legal, agora precisamos conhecer alguns conceitos importantes antes de prosseguir-mos. Vamos falar sobre 
-    CHAVE PRIMÁRIA, CHAVE ESTRANGEIRA, MULTIPLAS CHAVES P e/ou E... cola <a href="">aqui</a> !
+    CHAVE PRIMÁRIA, CHAVE ESTRANGEIRA... cola <a href="">aqui</a> !
 </p>
 
 <p>
@@ -87,7 +88,7 @@
     <br>id_pessoa<br>nome<br>data de nascimento<br>sexo<br>cpf<br>altura<br>país<br>data de cadastro<br>data de atualização<br><br>
     Aproveite, e crie também uma nova tabela tb_produtos, com os seguintes campos: <br> 
     id_produto<br>nome<br>descricao<br>validade<br>quantidade<br><br>
-    Ahhhhh Lembre-se de que o campo id deve ser a chave primária das suas tabelas e o relacionamento deve ser de n:n,
+    Ahhhhh Lembre-se de que o campo id deve ser a chave primária das suas tabelas e o relacionamento deve ser de 1:n,
     ou seja, muitos para muitos! <br><a href="">meu exemplo!</a></a>
     
     Feito?! ToOp, vamos conhecer mais alguns comandos então...
